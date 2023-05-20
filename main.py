@@ -1,9 +1,10 @@
 from flask import Flask, request, jsonify
 import nltk
-from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from spacy_finder import encontrar_frases_similares
 
 app = Flask(__name__)
 
@@ -16,6 +17,14 @@ def minha_funcao():
     input_sentence = pre_processor(
         minha_string)  # chamando a função preProcessar() passando a string recebida como argumento
     # Aqui você pode fazer o processamento desejado com a string pré-processada
+
+    data = ["Eu gosto do bolsonaro", "Eu gosto do lula", "Eu gosto de banana", "Eu gosto de fumar",
+            "Eu odeio Bolsonaro"]
+    resultados = encontrar_frases_similares(input_sentence, data)
+
+    # Exibir os resultados
+    for resultado in resultados:
+        print(resultado[0])
 
     similar_encontrado = find_similar(input_sentence)
     response_data = {'mensagem': 'String recebida: ' + minha_string + '. String pré-processada: ' + input_sentence}
