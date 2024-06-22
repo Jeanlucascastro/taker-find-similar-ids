@@ -1,6 +1,5 @@
 import spacy
 
-
 def encontrar_frases_similares(frase_entrada, frases_banco_dados):
     # Carregar o modelo do idioma
     nlp = spacy.load("pt_core_news_sm")

@@ -39,14 +39,14 @@ deactivate nondestructive
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath "/home/jean/Documentos/GitHub/taker-find-similar-ids/concord")
+    export VIRTUAL_ENV=$(cygpath "C:\Users\Jean Lucas\Documents\GitHub\clones\taker-find-similar-ids\concord")
 else
     # use the path as-is
-    export VIRTUAL_ENV="/home/jean/Documentos/GitHub/taker-find-similar-ids/concord"
+    export VIRTUAL_ENV="C:\Users\Jean Lucas\Documents\GitHub\clones\taker-find-similar-ids\concord"
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"
-PATH="$VIRTUAL_ENV/bin:$PATH"
+PATH="$VIRTUAL_ENV/Scripts:$PATH"
 export PATH
 
 # unset PYTHONHOME if set
