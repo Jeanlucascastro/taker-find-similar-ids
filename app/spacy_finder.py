@@ -9,13 +9,15 @@ def encontrar_frases_similares(frase_entrada, frases_banco_dados):
 
     # Processar as frases do banco de dados e calcular a similaridade
     resultados = []
-    for frase in frases_banco_dados:
+    for item in frases_banco_dados:
+        frase = item["phrase"]
+        message_id = item["messageId"]
         doc2 = nlp(frase)
         similaridade = doc1.similarity(doc2)
-        resultados.append((frase, similaridade))
+        resultados.append((message_id, frase, similaridade))
 
-    # Ordenar os resultados por similaridade
-    resultados = sorted(resultados, key=lambda x: x[1], reverse=True)
+# Ordenar os resultados por similaridade
+    resultados = sorted(resultados, key=lambda x: x[2], reverse=True)
 
     # Retornar os resultados
     return resultados
