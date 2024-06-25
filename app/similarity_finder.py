@@ -3,7 +3,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
-def find_similar(input_sentence, num_similar=5, data_db=[]):
+def find_similar(input_sentence, data_db, num_similar=5):
+    print(data_db)
     # data = ["Eu gosto do bolsonaro", "Eu gosto do lula", "Eu gosto de banana", "Eu gosto de fumar", "Eu odeio Bolsonaro"]
     stop_words = set(stopwords.words('portuguese'))
     corpus = []
