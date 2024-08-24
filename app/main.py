@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from app.preprocessor import pre_processor
 from app.similarity_finder import find_similar
 from app.spacy_finder import encontrar_frases_similares
-from db import fetch_data_from_db
+from app.db import fetch_data_from_db
 
 minha_funcao = Blueprint('minha_funcao', __name__)
 

@@ -1,6 +1,9 @@
+from typing import List
 import psycopg2
 from psycopg2 import Error
 from psycopg2.extras import RealDictCursor
+
+from app.models.cut_message import CutMessage
 
 # Configurações do banco de dados
 DB_HOST = 'localhost'
@@ -28,7 +31,7 @@ def close_connection(connection):
     if connection:
         connection.close()
 
-def fetch_data_from_db(query):
+def fetch_data_from_db(query: str)-> List[CutMessage]:
     connection = create_connection()
     if connection:
         try:
