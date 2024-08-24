@@ -33,10 +33,10 @@ def encontrar():
     print(frases_banco_dados)
 
 
-    # input_sentence = pre_processor(minha_string)
-    # resultados = encontrar_frases_similares(input_sentence, frases_banco_dados)
-    # resultados_tfidf, _ = find_similar(input_sentence, frases_banco_dados)
+    input_sentence = pre_processor(minha_string)
+    resultados = encontrar_frases_similares(input_sentence, frases_banco_dados)
+    resultados_tfidf, _ = find_similar(input_sentence, frases_banco_dados)
 
-    # response_data = {'mensagem': f'String recebida: {minha_string}. String pré-processada: {input_sentence}'}
-    # print(resultados)
-    return jsonify(frases_banco_dados)
+    response_data = {'mensagem': f'String recebida: {minha_string}. String pré-processada: {input_sentence}'}
+    print(resultados)
+    return jsonify(resultados)
