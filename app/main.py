@@ -11,6 +11,7 @@ def encontrar():
     data = request.get_json()
     minha_string = data['minha_string']
     node_message_id = data.get('node_message_id')
+    frases_banco_dados = data.get['phases']
 
     # frases_banco_dados = [
     # {"cuted_message": "Eu gosto do bolsonaro", "message_id": 1},
@@ -21,15 +22,15 @@ def encontrar():
     # ]
 
     # Query para buscar dados no banco de dados
-    query = f"""
-        SELECT cm.cuted_message, cm.message_id
-        FROM cut_message cm
-        JOIN cut_node_message cnm ON cm.id = cnm.cut_message_id
-        WHERE cnm.node_message_id = {node_message_id}
-        AND cm.deleted = false;
-    """
+    # query = f"""
+    #     SELECT cm.cuted_message, cm.message_id
+    #     FROM cut_message cm
+    #     JOIN cut_node_message cnm ON cm.id = cnm.cut_message_id
+    #     WHERE cnm.node_message_id = {node_message_id}
+    #     AND cm.deleted = false;
+    # """
 
-    frases_banco_dados = fetch_data_from_db(query)
+    #frases_banco_dados = fetch_data_from_db(query)
     print(frases_banco_dados)
 
 
