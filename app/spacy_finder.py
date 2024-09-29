@@ -10,8 +10,8 @@ def encontrar_frases_similares(frase_entrada, frases_banco_dados):
     # Processar as frases do banco de dados e calcular a similaridade
     resultados = []
     for item in frases_banco_dados:
-        frase = item["cuted_message"]
-        message_id = item["message_id"]
+        frase = item["cutedMessage"]
+        message_id = item["messageId"]
         doc2 = nlp(frase)
         similaridade = doc1.similarity(doc2)
         resultados.append((message_id, frase, similaridade))

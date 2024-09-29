@@ -11,7 +11,7 @@ def encontrar():
     data = request.get_json()
     minha_string = data['minha_string']
     node_message_id = data.get('node_message_id')
-    frases_banco_dados = data.get['phases']
+    frases_banco_dados = data.get('phases')
 
     # frases_banco_dados = [
     # {"cuted_message": "Eu gosto do bolsonaro", "message_id": 1},

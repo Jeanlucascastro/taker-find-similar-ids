@@ -9,7 +9,7 @@ def find_similar(input_sentence, data_db, num_similar=5):
     stop_words = set(stopwords.words('portuguese'))
     corpus = []
     for item in data_db:
-        sentence = item["cuted_message"]
+        sentence = item["cutedMessage"]
         sentence_tokens = word_tokenize(sentence.lower())
         sentence_tokens = [word for word in sentence_tokens if word.isalnum() and word not in stop_words]
         cleaned_sentence = ' '.join(sentence_tokens)
@@ -30,8 +30,8 @@ def find_similar(input_sentence, data_db, num_similar=5):
     similarity_scores = []
     for i in range(min(num_similar, len(data_db))):
         index = related_docs_indices[i]
-        most_similar_sentence = data_db[index]["cuted_message"]
-        message_id = data_db[index]["message_id"]
+        most_similar_sentence = data_db[index]["cutedMessage"]
+        message_id = data_db[index]["messageId"]
         similarity_score = cosine_similarities[index]
         most_similar_sentences.append((message_id, most_similar_sentence))
         similarity_scores.append(similarity_score)
